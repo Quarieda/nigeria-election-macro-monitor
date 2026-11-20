@@ -128,6 +128,12 @@ window.dash = (() => {
   .em-tab[aria-selected="true"] { color: var(--cbn-green) !important; box-shadow: inset 0 -2px 0 var(--cbn-green-2), 0 1px 3px rgba(20, 40, 30, .12) !important; }
   .em-section-h { color: var(--cbn-green); }
   .em-strip { border-left: 4px solid var(--cbn-green-2) !important; }
+  /* visible green shadow around every card */
+  .em-card, .em-strip { border-color: rgba(0, 122, 77, .22) !important;
+    box-shadow: 0 1px 3px rgba(0, 87, 58, .14), 0 6px 18px rgba(0, 122, 77, .18), 0 0 0 1px rgba(0, 122, 77, .06) !important;
+    transition: box-shadow .2s ease; }
+  .em-strip { border-left-color: var(--cbn-green-2) !important; }
+  .em-card:hover { box-shadow: 0 2px 4px rgba(0, 87, 58, .18), 0 10px 26px rgba(0, 122, 77, .26), 0 0 0 1px rgba(0, 122, 77, .10) !important; }
   .em-title { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.35); line-height: 1.15; text-wrap: balance; }
   .em-lede { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.55; max-width: 68ch; color: var(--color-fg); }
   .em .em-lede b, .em .em-num b { font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -238,7 +244,7 @@ window.dash = (() => {
   <div class="em-band" role="banner">
     <div class="em-band-org">
       <p class="em-band-dept">Monetary Policy Department</p>
-      <p class="em-band-sub">Staff research dashboard · views are the authors' and not an official statement of the Central Bank of Nigeria</p>
+      <p class="em-band-sub">Staff Monetary Policy Department</p>
     </div>
     <p class="em-band-date"><span>Today</span><time id="em-today">—</time></p>
   </div>
@@ -250,7 +256,7 @@ window.dash = (() => {
     })();
   </script>
   <header class="em-head" id="top">
-    <p class="em-eyebrow">Election-cycle macro surveillance · Nigeria · model estimated on monthly data, 2000–2024</p>
+    <p class="em-eyebrow">Election-cycle macro surveillance · Nigeria · monthly data, 2000–2026</p>
     <h1 class="em-title">Nigeria Election Macro Monitor</h1>
     <p class="em-lede" data-draw="watchlede" data-source="watch_now next_vote fx_daily">—</p>
     <p class="em-lede">Across the six general elections from 2003 to 2023, measured against normal times, the six months after the vote bring inflation of <b data-draw="stat" data-source="windows" data-field="excess" data-where="variable=inflation&amp;segment=after_vote&amp;cycle=All" data-fmt="pp">—</b>, a naira move of <b data-draw="stat" data-source="windows" data-field="excess" data-where="variable=fx&amp;segment=after_vote&amp;cycle=All" data-fmt="pct">—</b> per dollar, fiscal injection of <b data-draw="stat" data-source="windows" data-field="excess" data-where="variable=fii&amp;segment=after_vote&amp;cycle=All" data-fmt="sd">—</b> and liquidity injection of <b data-draw="stat" data-source="windows" data-field="excess" data-where="variable=lii&amp;segment=after_vote&amp;cycle=All" data-fmt="sd">—</b>. In the run-up itself, fiscal injection is the indicator that moves ahead of the vote.</p>
